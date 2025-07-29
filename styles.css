@@ -11,11 +11,13 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--primary-bg);
     color: var(--primary-text);
     line-height: 1.6;
@@ -24,7 +26,15 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 2rem 1rem;
 }
@@ -32,9 +42,15 @@ body {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 4rem 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -63,16 +79,17 @@ body {
     max-width: 500px;
 }
 
-
-
 .cta-button {
     padding: 1rem 2rem;
     border: none;
     border-radius: 12px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
@@ -86,7 +103,13 @@ body {
 
 .cta-button.primary:hover {
     background-color: var(--secondary-accent);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
     transform: translateY(-2px);
+    -webkit-box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
+    -moz-box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
     box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
 }
 
@@ -99,13 +122,29 @@ body {
 .cta-button.secondary:hover {
     background-color: var(--primary-text);
     color: var(--primary-bg);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
     transform: translateY(-2px);
 }
 
 /* Hero Visual - Phone Mockup */
 .hero-visual {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -116,6 +155,8 @@ body {
     border: 3px solid var(--primary-text);
     border-radius: 35px;
     padding: 20px;
+    -webkit-box-shadow: 0 20px 60px rgba(60, 27, 9, 0.15);
+    -moz-box-shadow: 0 20px 60px rgba(60, 27, 9, 0.15);
     box-shadow: 0 20px 60px rgba(60, 27, 9, 0.15);
     position: relative;
 }
@@ -127,22 +168,56 @@ body {
     border-radius: 25px;
     overflow: hidden;
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 /* Battery Animation Container */
 .battery-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 2rem;
 }
 
 /* Battery Icon */
 .battery-icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
 }
@@ -161,7 +236,13 @@ body {
     height: 100%;
     background-color: var(--cta-accent);
     border-radius: 3px;
+    -webkit-animation: charge 3s ease-in-out infinite;
+    -moz-animation: charge 3s ease-in-out infinite;
+    -o-animation: charge 3s ease-in-out infinite;
     animation: charge 3s ease-in-out infinite;
+    -webkit-transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
+    -o-transition: width 0.3s ease;
     transition: width 0.3s ease;
 }
 
@@ -182,6 +263,42 @@ body {
 }
 
 /* Battery Charging Animation */
+@-webkit-keyframes charge {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@-moz-keyframes charge {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@-o-keyframes charge {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
 @keyframes charge {
     0% {
         width: 0%;
@@ -197,6 +314,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-container {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
@@ -204,10 +322,18 @@ body {
     
     /* Visual on top, text below on mobile */
     .hero-visual {
+        -webkit-box-ordinal-group: 0;
+        -webkit-order: -1;
+        -moz-box-ordinal-group: 0;
+        -ms-flex-order: -1;
         order: -1;
     }
     
     .hero-content {
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 1;
         order: 1;
     }
     
