@@ -23,6 +23,60 @@ body {
     line-height: 1.6;
 }
 
+/* Sticky Header */
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-bg);
+    -webkit-box-shadow: 0 2px 10px rgba(60, 27, 9, 0.1);
+    -moz-box-shadow: 0 2px 10px rgba(60, 27, 9, 0.1);
+    box-shadow: 0 2px 10px rgba(60, 27, 9, 0.1);
+    padding: 1rem 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -313,6 +367,23 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header {
+        padding: 0.75rem 0;
+    }
+    
+    .header-container {
+        padding: 0 1rem;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .header .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
     .hero-container {
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -362,6 +433,23 @@ body {
 }
 
 @media (max-width: 480px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+    
+    .header-container {
+        padding: 0 0.75rem;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .header .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
     .hero {
         padding: 1rem;
     }
