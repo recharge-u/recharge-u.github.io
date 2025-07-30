@@ -5,7 +5,6 @@
     --cta-accent: #5f9953;
     --secondary-accent: #14471b;
     --white: #ffffff;
-    color-scheme: light;
 }
 
 /* Reset and Base Styles */
@@ -76,37 +75,6 @@ body {
     font-weight: 700;
     color: var(--primary-text);
     text-decoration: none;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-
-.hamburger-line {
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-text);
-    margin: 2px 0;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 /* Hero Section */
@@ -411,16 +379,9 @@ body {
         font-size: 1.25rem;
     }
     
-    .header-cta {
-        display: none;
-    }
-    
-    .hamburger-menu {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
+    .header .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
     }
     
     .hero-container {
@@ -484,16 +445,9 @@ body {
         font-size: 1.1rem;
     }
     
-    .header-cta {
-        display: none;
-    }
-    
-    .hamburger-menu {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
+    .header .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
     
     .hero {
