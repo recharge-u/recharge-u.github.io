@@ -77,12 +77,19 @@ body {
     text-decoration: none;
 }
 
-/* Header CTA Button - Desktop Default */
-.header-cta-button {
-    display: inline-block;
+.header-actions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
-/* Hamburger Menu - Hidden by Default on Desktop */
 .hamburger-menu {
     display: none;
     -webkit-box-orient: vertical;
@@ -92,26 +99,15 @@ body {
     -moz-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
     cursor: pointer;
-    gap: 4px;
+    padding: 0.5rem;
 }
 
 .hamburger-line {
-    width: 25px;
+    width: 24px;
     height: 3px;
     background-color: var(--primary-text);
+    margin: 2px 0;
     border-radius: 2px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -421,18 +417,17 @@ body {
         font-size: 1.25rem;
     }
     
-    /* Hide desktop CTA button on mobile */
-    .header-cta-button {
-        display: none !important;
+    /* Hide CTA button on mobile, show hamburger menu */
+    .header-cta {
+        display: none;
     }
     
-    /* Show hamburger menu on mobile */
     .hamburger-menu {
-        display: -webkit-box !important;
-        display: -webkit-flex !important;
-        display: -moz-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
     }
     
     .hero-container {
@@ -496,22 +491,17 @@ body {
         font-size: 1.1rem;
     }
     
-    /* Ensure CTA button stays hidden on smallest screens */
-    .header-cta-button {
-        display: none !important;
+    /* Keep hamburger menu visible on smallest screens */
+    .header-cta {
+        display: none;
     }
     
-    /* Keep hamburger menu visible and adjust size */
     .hamburger-menu {
-        display: flex !important;
-        width: 28px;
-        height: 28px;
-        gap: 3px;
-    }
-    
-    .hamburger-line {
-        width: 22px;
-        height: 2.5px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
     }
     
     .hero {
