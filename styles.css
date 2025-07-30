@@ -77,12 +77,12 @@ body {
     text-decoration: none;
 }
 
-/* Desktop CTA Button */
-.header-cta {
+/* Header CTA Button - Desktop Default */
+.header-cta-button {
     display: inline-block;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu - Hidden by Default on Desktop */
 .hamburger-menu {
     display: none;
     -webkit-box-orient: vertical;
@@ -422,17 +422,17 @@ body {
     }
     
     /* Hide desktop CTA button on mobile */
-    .header-cta {
-        display: none;
+    .header-cta-button {
+        display: none !important;
     }
     
     /* Show hamburger menu on mobile */
     .hamburger-menu {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
+        display: -webkit-box !important;
+        display: -webkit-flex !important;
+        display: -moz-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
     }
     
     .hero-container {
@@ -496,8 +496,14 @@ body {
         font-size: 1.1rem;
     }
     
-    /* Keep hamburger menu visible on smallest screens */
+    /* Ensure CTA button stays hidden on smallest screens */
+    .header-cta-button {
+        display: none !important;
+    }
+    
+    /* Keep hamburger menu visible and adjust size */
     .hamburger-menu {
+        display: flex !important;
         width: 28px;
         height: 28px;
         gap: 3px;
