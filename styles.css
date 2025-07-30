@@ -5,6 +5,7 @@
     --cta-accent: #5f9953;
     --secondary-accent: #14471b;
     --white: #ffffff;
+    color-scheme: light;
 }
 
 /* Reset and Base Styles */
@@ -33,12 +34,7 @@ body {
     -webkit-box-shadow: 0 2px 10px rgba(60, 27, 9, 0.1);
     -moz-box-shadow: 0 2px 10px rgba(60, 27, 9, 0.1);
     box-shadow: 0 2px 10px rgba(60, 27, 9, 0.1);
-    padding: 1rem 0;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    padding: 0.75rem 0;
 }
 
 .header-container {
@@ -82,9 +78,40 @@ body {
     text-decoration: none;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-text);
+    margin: 2px 0;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -95,9 +122,7 @@ body {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 2rem 1rem;
-    margin-top: 0;
-    padding-top: 0;
+    padding: 1rem 1rem 2rem 1rem;
 }
 
 .hero-container {
@@ -375,7 +400,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
-        padding: 0.75rem 0;
+        padding: 0.5rem 0;
     }
     
     .header-container {
@@ -386,9 +411,16 @@ body {
         font-size: 1.25rem;
     }
     
-    .header .cta-button {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
+    .header-cta {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
     }
     
     .hero-container {
@@ -441,7 +473,7 @@ body {
 
 @media (max-width: 480px) {
     .header {
-        padding: 0.5rem 0;
+        padding: 0.4rem 0;
     }
     
     .header-container {
@@ -452,9 +484,16 @@ body {
         font-size: 1.1rem;
     }
     
-    .header .cta-button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+    .header-cta {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
     }
     
     .hero {
