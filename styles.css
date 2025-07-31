@@ -2088,6 +2088,252 @@ body {
     margin: 0;
 }
 
+/* ===== WAITLIST MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1000;
+    -webkit-animation: fadeIn 0.3s ease;
+    -moz-animation: fadeIn 0.3s ease;
+    -o-animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.is-open {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--primary-bg);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    -webkit-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    -webkit-animation: slideIn 0.3s ease;
+    -moz-animation: slideIn 0.3s ease;
+    -o-animation: slideIn 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary-text);
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--cta-accent);
+}
+
+.modal-title {
+    color: var(--primary-text);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-description {
+    color: var(--primary-text);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.waitlist-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.email-input {
+    padding: 1rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--white);
+    color: var(--primary-text);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: var(--cta-accent);
+    -webkit-box-shadow: 0 0 0 3px rgba(95, 153, 83, 0.1);
+    -moz-box-shadow: 0 0 0 3px rgba(95, 153, 83, 0.1);
+    box-shadow: 0 0 0 3px rgba(95, 153, 83, 0.1);
+}
+
+.email-input::placeholder {
+    color: var(--primary-text);
+    opacity: 0.6;
+}
+
+.submit-button {
+    background-color: var(--cta-accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-accent);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
+    -moz-box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
+    box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
+}
+
+/* Modal Animations */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    from {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes slideIn {
+    from {
+        -moz-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes slideIn {
+    from {
+        -o-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        -o-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
