@@ -1005,20 +1005,15 @@ body {
 }
 
 .solution-grid {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto 2rem auto;
+    grid-template-rows: auto auto;
     gap: 2rem;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .solution-card {
@@ -1029,11 +1024,6 @@ body {
     -webkit-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -1332,6 +1322,132 @@ body {
     animation-delay: 2s;
 }
 
+.icon-energy {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.energy-battery {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column-reverse;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.battery-shell {
+    width: 30px;
+    height: 50px;
+    border: 3px solid var(--cta-accent);
+    border-radius: 4px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -moz-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding: 2px;
+    gap: 1px;
+    background-color: var(--white);
+}
+
+.battery-top {
+    width: 12px;
+    height: 4px;
+    background-color: var(--cta-accent);
+    border-radius: 2px 2px 0 0;
+    margin-bottom: 2px;
+}
+
+.energy-level {
+    width: 100%;
+    height: 8px;
+    border-radius: 1px;
+    opacity: 0;
+    -webkit-animation: energy-fill 4s ease-in-out infinite;
+    -moz-animation: energy-fill 4s ease-in-out infinite;
+    -o-animation: energy-fill 4s ease-in-out infinite;
+    animation: energy-fill 4s ease-in-out infinite;
+}
+
+.energy-level-1 {
+    background-color: #ff4444;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.energy-level-2 {
+    background-color: #ff8844;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.energy-level-3 {
+    background-color: #ffcc44;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.energy-level-4 {
+    background-color: #88cc44;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.energy-level-5 {
+    background-color: var(--cta-accent);
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
 /* Solution Animations */
 @-webkit-keyframes pulse-dot {
     0%, 100% {
@@ -1482,6 +1598,54 @@ body {
         -moz-transform: translateY(-5px);
         -o-transform: translateY(-5px);
         transform: translateY(-5px);
+    }
+}
+
+@-webkit-keyframes energy-fill {
+    0%, 20% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    80%, 100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes energy-fill {
+    0%, 20% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    80%, 100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes energy-fill {
+    0%, 20% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    80%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes energy-fill {
+    0%, 20% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    80%, 100% {
+        opacity: 0;
     }
 }
 
@@ -1643,13 +1807,10 @@ body {
     }
     
     .solution-grid {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -moz-box-orient: vertical;
-        -moz-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: auto auto auto auto;
+        grid-template-rows: repeat(4, auto);
         gap: 1.5rem;
     }
     
