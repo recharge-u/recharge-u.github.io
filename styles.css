@@ -1825,7 +1825,6 @@ body {
 }
 
 /* ===== SOCIAL PROOF SECTIONS ===== */
-
 /* Trusted by Experts Section */
 .experts-section {
     background-color: var(--white);
@@ -1842,8 +1841,8 @@ body {
     color: var(--primary-text);
     font-size: 2.5rem;
     font-weight: 600;
-    text-align: center;
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .experts-grid {
@@ -1852,11 +1851,11 @@ body {
     -ms-grid-columns: 1fr 2rem 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.experts-section .testimonial-card {
+.expert-card {
     background-color: var(--primary-bg);
     border-radius: 20px;
     padding: 2.5rem;
@@ -1864,78 +1863,18 @@ body {
     -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     position: relative;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
-/* From Campus to Career Section */
-.users-section {
-    background-color: var(--primary-bg);
-    padding: 5rem 0;
-}
-
-.users-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.users-title {
-    color: var(--primary-text);
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.users-grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 2rem 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.users-section .testimonial-card {
-    background-color: var(--white);
-    border-radius: 20px;
-    padding: 2.5rem;
-    -webkit-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
-    -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
-    box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
-    position: relative;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-/* Shared Testimonial Card Styles */
-.testimonial-card:hover {
-    -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    -o-transform: translateY(-5px);
-    transform: translateY(-5px);
-    -webkit-box-shadow: 0 15px 45px rgba(60, 27, 9, 0.12);
-    -moz-box-shadow: 0 15px 45px rgba(60, 27, 9, 0.12);
-    box-shadow: 0 15px 45px rgba(60, 27, 9, 0.12);
-}
-
-.quote-mark {
+.expert-card .quote-mark {
     font-size: 4rem;
-    font-weight: 700;
     color: var(--cta-accent);
+    font-weight: 700;
     line-height: 1;
     margin-bottom: 1rem;
     font-family: Georgia, serif;
 }
 
-.quote-text {
+.expert-card .quote-text {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--primary-text);
@@ -1964,17 +1903,9 @@ body {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    border: 2px solid var(--cta-accent);
-}
-
-.author-info {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
 }
 
 .author-name {
-    font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary-text);
     margin-bottom: 0.25rem;
@@ -1983,7 +1914,64 @@ body {
 .author-title {
     font-size: 0.9rem;
     color: var(--secondary-accent);
-    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* From Campus to Career Section */
+.users-section {
+    background-color: var(--primary-bg);
+    padding: 5rem 0;
+}
+
+.users-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.users-title {
+    color: var(--primary-text);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.users-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.user-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    -webkit-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    position: relative;
+}
+
+.user-card .quote-mark {
+    font-size: 4rem;
+    color: var(--cta-accent);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+}
+
+.user-card .quote-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--primary-text);
+    margin-bottom: 2rem;
+    font-style: italic;
 }
 
 /* Responsive Design */
@@ -2186,16 +2174,14 @@ body {
         gap: 1.5rem;
     }
     
-    .testimonial-card {
+    .expert-card,
+    .user-card {
         padding: 2rem 1.5rem;
     }
     
-    .quote-mark {
+    .expert-card .quote-mark,
+    .user-card .quote-mark {
         font-size: 3rem;
-    }
-    
-    .quote-text {
-        font-size: 1rem;
     }
 }
 
