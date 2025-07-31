@@ -2075,6 +2075,19 @@ body {
     opacity: 0.8;
 }
 
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--primary-text);
+    color: var(--primary-bg);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
