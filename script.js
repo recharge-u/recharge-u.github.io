@@ -70,7 +70,7 @@ waitlistForm.addEventListener('submit', (e) => {
     }
 
     // Your actual Google Apps Script Web App URL
-    const scriptURL = 'https://script.google.com/macros/library/d/1T0D0GRGGeIBG_5-tNdgjwbWtdG7-dHr-2wjnc-XBGzc2cZEz3M1XJ25s/1';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwm7memdCHrbOd4NpvXGWbIJz9aW0_Milg0qn_i27teEG1DFPfqgW5BFIF9AR2DXN-G-w/exec';
 
     fetch(scriptURL, {
         method: 'POST',
