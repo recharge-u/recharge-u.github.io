@@ -1824,6 +1824,168 @@ body {
     }
 }
 
+/* ===== SOCIAL PROOF SECTIONS ===== */
+
+/* Trusted by Experts Section */
+.experts-section {
+    background-color: var(--white);
+    padding: 5rem 0;
+}
+
+.experts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.experts-title {
+    color: var(--primary-text);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experts-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experts-section .testimonial-card {
+    background-color: var(--primary-bg);
+    border-radius: 20px;
+    padding: 2.5rem;
+    -webkit-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* From Campus to Career Section */
+.users-section {
+    background-color: var(--primary-bg);
+    padding: 5rem 0;
+}
+
+.users-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.users-title {
+    color: var(--primary-text);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.users-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.users-section .testimonial-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    -webkit-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Shared Testimonial Card Styles */
+.testimonial-card:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+    -webkit-box-shadow: 0 15px 45px rgba(60, 27, 9, 0.12);
+    -moz-box-shadow: 0 15px 45px rgba(60, 27, 9, 0.12);
+    box-shadow: 0 15px 45px rgba(60, 27, 9, 0.12);
+}
+
+.quote-mark {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--cta-accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--primary-text);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.author-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    border: 2px solid var(--cta-accent);
+}
+
+.author-info {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-bottom: 0.25rem;
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: var(--secondary-accent);
+    font-weight: 500;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
@@ -2008,6 +2170,32 @@ body {
     
     .showcase-track {
         gap: 1.5rem;
+    }
+    
+    /* Social Proof Responsive */
+    .experts-title,
+    .users-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .experts-grid,
+    .users-grid {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .quote-mark {
+        font-size: 3rem;
+    }
+    
+    .quote-text {
+        font-size: 1rem;
     }
 }
 
