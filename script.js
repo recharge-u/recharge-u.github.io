@@ -29,21 +29,66 @@ modalOverlay.addEventListener('click', (e) => {
     }
 });
 
+// Handle email validation 
+function isValidEmail(email) {
+    // Simple RFC 5322 compliant regex for most emails
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Handle email spam
+function isSpamSubmission(form) {
+    // Honeypot: hidden field should be empty if human
+    const honeypot = form.querySelector('.honeypot');
+    if (honeypot && honeypot.value) return true;
+
+    // Simple rate limiting: allow only 1 submit per 30 seconds per session
+    const lastSubmit = sessionStorage.getItem('waitlist_last_submit');
+    const now = Date.now();
+    if (lastSubmit && now - lastSubmit < 30000) return true;
+    sessionStorage.setItem('waitlist_last_submit', now);
+
+    return false;
+}
+
 // Handle form submission
 waitlistForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const emailInput = waitlistForm.querySelector('.email-input');
     const email = emailInput.value;
-    
-    // Here you would typically send the email to your backend
-    console.log('Email submitted:', email);
-    
-    // Show success message (you can customize this)
-    alert('Thank you! You\'ve been added to the waitlist.');
-    
-    // Reset form and close modal
-    emailInput.value = '';
-    modalOverlay.classList.remove('is-open');
+
+    // Validation
+    if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    // Spam Protection
+    if (isSpamSubmission(waitlistForm)) {
+        alert('Submission blocked as spam or too frequent. Please try again later.');
+        return;
+    }
+
+    // Your actual Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/library/d/1T0D0GRGGeIBG_5-tNdgjwbWtdG7-dHr-2wjnc-XBGzc2cZEz3M1XJ25s/1';
+
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ email })
+    })
+    .then(() => {
+        alert('Thank you! You\'ve been added to the waitlist.');
+        emailInput.value = '';
+        modalOverlay.classList.remove('is-open');
+    })
+    .catch((error) => {
+        alert('There was an error. Please try again later.');
+        console.error('Error!', error.message);
+    });
 });
 
 // Close modal with Escape key
