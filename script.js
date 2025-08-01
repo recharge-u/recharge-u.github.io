@@ -70,10 +70,6 @@ waitlistForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Before fetch
-    submitButton.disabled = false;
-    submitButton.textContent = 'Submitting...';
-
     // Your actual Google Apps Script Web App URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzXRh4_cwawakpF1doqL8ot19m99-CTGWlaVA9PX_vYuijjdsbSy4qOSBXNLNMzzQ9PRQ/exec';
     fetch(scriptURL, {
@@ -94,10 +90,9 @@ waitlistForm.addEventListener('submit', (e) => {
         console.error('Error!', error.message);
     });
 
-    /*// After fetch
+    // After fetch
     submitButton.disabled = false;
     submitButton.textContent = 'Submit';
-    */
 });
 
 // Close modal with Escape key
