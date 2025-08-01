@@ -69,9 +69,9 @@ waitlistForm.addEventListener('submit', (e) => {
         alert('Submission blocked as spam or too frequent. Please try again later.');
         return;
     }
-   
+
     // Before fetch
-    submitButton.disabled = true;
+    submitButton.disabled = false;
     submitButton.textContent = 'Submitting...';
 
     // Your actual Google Apps Script Web App URL
@@ -94,9 +94,10 @@ waitlistForm.addEventListener('submit', (e) => {
         console.error('Error!', error.message);
     });
 
-    // After fetch
+    /*// After fetch
     submitButton.disabled = false;
     submitButton.textContent = 'Submit';
+    */
 });
 
 // Close modal with Escape key
