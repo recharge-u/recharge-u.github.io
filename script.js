@@ -36,7 +36,7 @@ function isValidEmail(email) {
     return re.test(email);
 }
 
-/*// Handle email spam
+// Handle email spam
 function isSpamSubmission(form) {
     // Honeypot: hidden field should be empty if human
     const honeypot = form.querySelector('.honeypot');
@@ -49,7 +49,7 @@ function isSpamSubmission(form) {
     sessionStorage.setItem('waitlist_last_submit', now);
 
     return false;
-}*/
+}
 
 // Handle form submission
 waitlistForm.addEventListener('submit', (e) => {
@@ -63,14 +63,17 @@ waitlistForm.addEventListener('submit', (e) => {
         return;
     }
 
-    /*
+
     // Spam Protection
     if (isSpamSubmission(waitlistForm)) {
         alert('Submission blocked as spam or too frequent. Please try again later.');
         return;
     }
-    */
    
+    // Before fetch
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+
     // Your actual Google Apps Script Web App URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzXRh4_cwawakpF1doqL8ot19m99-CTGWlaVA9PX_vYuijjdsbSy4qOSBXNLNMzzQ9PRQ/exec';
     fetch(scriptURL, {
@@ -90,6 +93,10 @@ waitlistForm.addEventListener('submit', (e) => {
         alert('There was an error. Please try again later.');
         console.error('Error!', error.message);
     });
+
+    // After fetch
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
 });
 
 // Close modal with Escape key
