@@ -74,12 +74,15 @@ waitlistForm.addEventListener('submit', (e) => {
     }
 */
 
-    // Set submitting state
-    submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
-    submitButton.classList.add('is-submitting');
+    // Optimistic UI: Immediately perform success actions
+    modalOverlay.classList.remove('is-open');
+    alert('Thank you! You\'ve been added to the waitlist.');
+    emailInput.value = '';
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
+    submitButton.classList.remove('is-submitting');
 
-    // Your actual Google Apps Script Web App URL
+    // Send data to Google Sheet in the background
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzXRh4_cwawakpF1doqL8ot19m99-CTGWlaVA9PX_vYuijjdsbSy4qOSBXNLNMzzQ9PRQ/exec';
     fetch(scriptURL, {
         method: 'POST',
@@ -90,19 +93,10 @@ waitlistForm.addEventListener('submit', (e) => {
         body: new URLSearchParams({ email })
     })
     .then(() => {
-        alert('Thank you! You\'ve been added to the waitlist.');
-        emailInput.value = '';
-        modalOverlay.classList.remove('is-open');
+        console.log('Success: Email sent to Google Sheet');
     })
     .catch((error) => {
-        alert('There was an error. Please try again later.');
-        console.error('Error!', error.message);
-    })
-    .finally(() => {
-        // Reset button state
-        submitButton.disabled = false;
-        submitButton.textContent = 'Submit';
-        submitButton.classList.remove('is-submitting');
+        console.error('Background error sending email to sheet:', error.message);
     });
 });
 
