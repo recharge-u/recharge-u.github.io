@@ -2593,17 +2593,15 @@ body {
         font-size: 1.1rem;
     }
     
-    /* Keep hamburger menu visible on smallest screens */
-    .header-cta {
+    /* Hide hamburger menu and show smaller CTA button */
+    .hamburger-menu {
         display: none;
     }
     
-    .hamburger-menu {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
+    .header-cta {
+        display: inline-block;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
     }
     
     .hero {
