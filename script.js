@@ -77,6 +77,7 @@ waitlistForm.addEventListener('submit', (e) => {
     // Set submitting state
     submitButton.disabled = true;
     submitButton.textContent = 'Submitting...';
+    submitButton.classList.add('is-submitting');
 
     // Your actual Google Apps Script Web App URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzXRh4_cwawakpF1doqL8ot19m99-CTGWlaVA9PX_vYuijjdsbSy4qOSBXNLNMzzQ9PRQ/exec';
@@ -101,6 +102,7 @@ waitlistForm.addEventListener('submit', (e) => {
         // Reset button state
         submitButton.disabled = false;
         submitButton.textContent = 'Submit';
+        submitButton.classList.remove('is-submitting');
     });
 });
 

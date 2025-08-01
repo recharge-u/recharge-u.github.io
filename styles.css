@@ -2235,7 +2235,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.submit-button:hover {
+.submit-button:hover,
+.submit-button.is-submitting {
     background-color: var(--secondary-accent);
     -webkit-transform: translateY(-2px);
     -moz-transform: translateY(-2px);
@@ -2245,6 +2246,10 @@ body {
     -webkit-box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
     -moz-box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
     box-shadow: 0 8px 25px rgba(95, 153, 83, 0.3);
+}
+
+.submit-button.is-submitting {
+    cursor: wait;
 }
 
 /* Modal Animations */
