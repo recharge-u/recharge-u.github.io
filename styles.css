@@ -39,7 +39,7 @@ body {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 0rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -1868,6 +1868,18 @@ body {
     -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .expert-card .quote-mark {
@@ -1899,6 +1911,7 @@ body {
     -ms-flex-align: center;
     align-items: center;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .author-photo {
@@ -1960,6 +1973,18 @@ body {
     -moz-box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     box-shadow: 0 8px 30px rgba(60, 27, 9, 0.08);
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .user-card .quote-mark {
